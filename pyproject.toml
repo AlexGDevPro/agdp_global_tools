@@ -1,0 +1,18 @@
+[project]
+name = "agdp-global-tools"
+version = "0.1.0"
+description = "A collection of classes and functions for everyday use with a lot of tests tools."
+authors = [{ name = "Alex G Dev Pro", email = "alexg.devpro@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+dependencies = []
+
+[build-system]
+requires = [
+    "setuptools>=68.2.0",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ['global_tools']
