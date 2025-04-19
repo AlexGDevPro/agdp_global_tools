@@ -1,11 +1,30 @@
 [project]
 name = "agdp-global-tools"
-version = "0.1.0"
+version = "0.2.0"
 description = "A collection of classes and functions for everyday use with a lot of tests tools."
-authors = [{ name = "Alex G Dev Pro", email = "alexg.devpro@gmail.com" }]
+authors = [
+    { name = "AlexGDevPro", email = "alexg.devpro@gmail.com" }
+]
 readme = "README.md"
 license = { file = "LICENSE" }
+requires-python = ">=3.8"
 dependencies = []
+keywords = ["testing", "assertions", "utilities", "debugging", "development"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Testing",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.11.8"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AlexGDevPro/agdp_global_tools"
+"Repository" = "https://github.com/AlexGDevPro/agdp_global_tools"
+"Documentation" = "https://github.com/AlexGDevPro/agdp_global_tools#readme"
 
 [build-system]
 requires = [
@@ -13,6 +32,9 @@ requires = [
     "wheel",
 ]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ['global_tools']
