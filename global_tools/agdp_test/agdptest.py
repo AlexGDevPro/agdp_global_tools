@@ -4,10 +4,10 @@ from typing import Callable, Any
 from global_tools.cprint.cprint import CPrint
 
 
-class Test:
+class AGDPTest:
     def __init__(self, func: Callable[..., Any], assert_utils: Callable[..., Any]):
         """
-        This class can be used to test functions one by one or using its static methods like show_test_results to test
+        This class can be used to agdp_test functions one by one or using its static methods like show_test_results to agdp_test
         more.
         """
         Check.check_func(func)
@@ -19,14 +19,14 @@ class Test:
 
     def start_test_tool(self):
         """
-        Used when Test is instantiated to announce the start of the test.
+        Used when Test is instantiated to announce the start of the agdp_test.
         """
         CPrint(f"BEGIN TEST : {self.func.__name__}", "info")
         CPrint(f"Expected result : {self.assert_utils.__name__}", "warning")
 
     def end_test_tool(self):
         """
-        Used when Test is instantiated to announce the end of the test.
+        Used when Test is instantiated to announce the end of the agdp_test.
         """
         CPrint(f"END TEST : {self.func.__name__}", "info")
 
@@ -35,7 +35,7 @@ class Test:
         """
         This static method is used to display multiple tests' results with the amount of succeed, failed and total.
         Args:
-            tests_results (list[dict]): Each dict is a combination of a test function name and its result. {"name":
+            tests_results (list[dict]): Each dict is a combination of a agdp_test function name and its result. {"name":
             function_name, "result": function()}
         """
         if not isinstance(tests_results, list):
@@ -59,12 +59,12 @@ class Test:
             i += 1
             if test["result"]:
                 tests_succeed += 1
-                CPrint(f"test #{i} {test['name']} done!", "info")
-                CPrint("test succeed !", "success")
+                CPrint(f"agdp_test #{i} {test['name']} done!", "info")
+                CPrint("agdp_test succeed !", "success")
             else:
                 tests_failed += 1
-                CPrint(f"test #{i} {test['name']} done!", "info")
-                CPrint("test failed !", "error")
+                CPrint(f"agdp_test #{i} {test['name']} done!", "info")
+                CPrint("agdp_test failed !", "error")
             CPrint.line_break()
         CPrint.divider("Final results")
         CPrint(f"tests passed: {tests_succeed}/{tests_qty}", "success")
@@ -80,8 +80,8 @@ class Test:
 
     @staticmethod
     def func_for_test_return_str():
-        return "test"
+        return "agdp_test"
 
     @staticmethod
     def func_for_test_with_exception():
-        raise SyntaxError('A syntax error for test.')
+        raise SyntaxError('A syntax error for agdp_test.')

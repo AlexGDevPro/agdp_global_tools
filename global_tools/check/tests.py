@@ -1,6 +1,6 @@
 from check import Check
 from global_tools.cprint.cprint import CPrint
-from global_tools.test.test import Test
+from global_tools.agdp_test.agdptest import AGDPTest
 from global_tools.assert_utils.assert_utils import Assert
 
 # TESTS
@@ -9,7 +9,7 @@ tests_results = []
 
 # check_func_name
 def test_check_func_name_succeed():
-    func_name = "test"
+    func_name = "agdp_test"
     return Assert.assert_no_exception(Check.check_func_name, func_name)
 
 
@@ -41,7 +41,7 @@ def test_check_bool_succeed_with_false():
 
 
 def test_check_bool_raise_error_with_wrong_arg_type():
-    return Assert.assert_exception_is_raised(Check.check_bool, TypeError(), "test")
+    return Assert.assert_exception_is_raised(Check.check_bool, TypeError(), "agdp_test")
 
 
 tests_results.append({"name": "test_check_bool_succeed_with_true",
@@ -54,12 +54,12 @@ tests_results.append({"name": "test_check_bool_raise_error_with_wrong_arg_type",
 
 # check_func
 def test_check_func_succeed():
-    return Assert.assert_no_exception(Check.check_func, Test.func_for_test_return_true)
+    return Assert.assert_no_exception(Check.check_func, AGDPTest.func_for_test_return_true)
 
 
 def test_check_func_raise_error_with_wrong_func_type():
     try:
-        Check.check_func("test")
+        Check.check_func("agdp_test")
     except TypeError:
         return True
     return False
@@ -77,7 +77,7 @@ def test_check_exception_succeed():
 
 
 def test_check_exception_raise_error_with_wrong_func_type():
-    return Assert.assert_exception_is_raised(Check.check_exception, None, "test")
+    return Assert.assert_exception_is_raised(Check.check_exception, None, "agdp_test")
 
 
 tests_results.append({"name": "test_check_exception_succeed",
@@ -87,4 +87,4 @@ tests_results.append({"name": "test_check_exception_raise_error_with_wrong_func_
 
 # TESTS EXECUTIONS
 CPrint("TESTS : check.tests", "info")
-Test.show_tests_results(tests_results)
+AGDPTest.show_tests_results(tests_results)

@@ -1,6 +1,6 @@
 [project]
 name = "agdp-global-tools"
-version = "0.2.0"
+version = "0.2.1"
 description = "A collection of classes and functions for everyday use with a lot of tests tools."
 authors = [
     { name = "AlexGDevPro", email = "alexg.devpro@gmail.com" }
